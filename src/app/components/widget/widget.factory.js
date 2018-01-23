@@ -631,6 +631,186 @@
             }
         ];
 
+        if (config.enableAppNetaWidgets) {
+            definitions.push({
+                name: 'flow.probe.fps',
+                title: 'Flow: Probe Exported Flows (fps)',
+                directive: 'area-stacked-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.nprobe.fps',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.probe.flow_exports'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticleResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.probe.dropped',
+                title: 'Flow: Probe Dropped Flows (fps)',
+                directive: 'area-stacked-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.probe.dropped',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.probe.flow_drops'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticleResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.probe.expired',
+                title: 'Flow: Probe Expired Flows (fps)',
+                directive: 'area-stacked-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.probe.expired',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.probe.flow_expires'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticleResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.probe.export_delay',
+                title: 'Flow: Probe Export Delay (s)',
+                directive: 'line-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.probe.export_delay',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.probe.flow_export_delay'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticleResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.probe.buckets',
+                title: 'Flow: Probe Flow Buckets (fps)',
+                directive: 'line-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.probe.flow_buckets',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.probe.flow_buckets'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticleResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.probe.intake_pkts',
+                title: 'Flow: Probe Received (pkt/s)',
+                directive: 'line-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.probe.intake_pkts',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.probe.received_pkts'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticalResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.collector.flow_receives',
+                title: 'Flow: Collector Received Flows (fps)',
+                directive: 'area-stacked-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.collector.flow_receives',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.collector.flow_receives'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticalResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.collector.flushes',
+                title: 'Flow: Collector Flushes (flushes/hr)',
+                directive: 'line-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.collector.flushes',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.collector.flushes'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticalResize: false,
+                group: 'APM: Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            });
+        }
+
         if (config.enableCpuFlameGraph) {
           definitions.push({
             /* for legacy, CPU flame graphs are in the CPU menu as well */

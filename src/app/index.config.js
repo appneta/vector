@@ -40,6 +40,7 @@
             'window': '2', // Default graph time window in minutes
             'enableCpuFlameGraph': false, // Enable CPU flame graph (requires extra PMDA)
             'enableContainerWidgets': true, // Enable container widgets
+            'enableAppNetaWidgets': true, // Enable AppNeta widgets
             'disableHostspecInput': false, // Disable hostspec input
             'disableContainerFilter': false, // Disable container id filter input
             'disableContainerSelect': false, // Disable container name drop down select
