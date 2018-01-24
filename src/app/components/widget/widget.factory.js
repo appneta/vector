@@ -634,7 +634,7 @@
         if (config.enableAppNetaWidgets) {
             definitions.push({
                 name: 'flow.probe.fps',
-                title: 'Flow: Probe Exported Flows (fps)',
+                title: 'Flow Probe Exported (flows)',
                 directive: 'area-stacked-time-series',
                 dataAttrName: 'data',
                 dataModelType: MultipleCumulativeMetricDataModel,
@@ -649,14 +649,14 @@
                     height: '250px'
                 },
                 enableVerticleResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
                 }
             }, {
                 name: 'flow.probe.dropped',
-                title: 'Flow: Probe Dropped Flows (fps)',
+                title: 'Flow Probe Dropped (flows)',
                 directive: 'area-stacked-time-series',
                 dataAttrName: 'data',
                 dataModelType: MultipleCumulativeMetricDataModel,
@@ -671,14 +671,14 @@
                     height: '250px'
                 },
                 enableVerticleResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
                 }
             }, {
                 name: 'flow.probe.expired',
-                title: 'Flow: Probe Expired Flows (fps)',
+                title: 'Flow Probe Expired (flows)',
                 directive: 'area-stacked-time-series',
                 dataAttrName: 'data',
                 dataModelType: MultipleCumulativeMetricDataModel,
@@ -693,14 +693,14 @@
                     height: '250px'
                 },
                 enableVerticleResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
                 }
             }, {
                 name: 'flow.probe.export_delay',
-                title: 'Flow: Probe Export Delay (s)',
+                title: 'Flow Probe Export Delay (s)',
                 directive: 'line-time-series',
                 dataAttrName: 'data',
                 dataModelType: MultipleCumulativeMetricDataModel,
@@ -715,17 +715,17 @@
                     height: '250px'
                 },
                 enableVerticleResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
                 }
             }, {
                 name: 'flow.probe.buckets',
-                title: 'Flow: Probe Flow Buckets (fps)',
+                title: 'Flow Probe Buckets (flows)',
                 directive: 'line-time-series',
                 dataAttrName: 'data',
-                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelType: MultipleMetricDataModel,
                 dataModelOptions: {
                     name: 'flow.probe.flow_buckets',
                     metricDefinitions: {
@@ -737,14 +737,14 @@
                     height: '250px'
                 },
                 enableVerticleResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
                 }
             }, {
                 name: 'flow.probe.intake_pkts',
-                title: 'Flow: Probe Received (pkt/s)',
+                title: 'Flow Probe Received Packets',
                 directive: 'line-time-series',
                 dataAttrName: 'data',
                 dataModelType: MultipleCumulativeMetricDataModel,
@@ -759,14 +759,36 @@
                     height: '250px'
                 },
                 enableVerticalResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
+                attrs: {
+                    percentage: false,
+                    integer: true
+                }
+            }, {
+                name: 'flow.probe.latency_measures',
+                title: 'Flow Probe Latency Errors',
+                directive: 'line-time-series',
+                dataAttrName: 'data',
+                dataModelType: MultipleCumulativeMetricDataModel,
+                dataModelOptions: {
+                    name: 'flow.probe.latency_measures',
+                    metricDefinitions: {
+                        '{key}': 'mmv.flow.probe.latency_failures'
+                    }
+                },
+                size: {
+                    width: '50%',
+                    height: '250px'
+                },
+                enableVerticalResize: false,
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
                 }
             }, {
                 name: 'flow.collector.flow_receives',
-                title: 'Flow: Collector Received Flows (fps)',
+                title: 'Flow Collector Received Flows (flows)',
                 directive: 'area-stacked-time-series',
                 dataAttrName: 'data',
                 dataModelType: MultipleCumulativeMetricDataModel,
@@ -781,14 +803,14 @@
                     height: '250px'
                 },
                 enableVerticalResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
                 }
             }, {
                 name: 'flow.collector.flushes',
-                title: 'Flow: Collector Flushes (flushes/hr)',
+                title: 'Flow Collector Flushes (flushes/hr)',
                 directive: 'line-time-series',
                 dataAttrName: 'data',
                 dataModelType: MultipleCumulativeMetricDataModel,
@@ -803,7 +825,7 @@
                     height: '250px'
                 },
                 enableVerticalResize: false,
-                group: 'APM: Flow',
+                group: 'Flow',
                 attrs: {
                     percentage: false,
                     integer: true
